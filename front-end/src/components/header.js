@@ -13,11 +13,11 @@ const Header = ({ selectedWine, wines, selectWine }) => (
             <Select
                 labelId="demo-simple-select-label"
                 id="demo-simple-select"
-                value={selectedWine || null}
+                value={selectedWine || ''}
                 onChange={(e) => selectWine(e.target.value)}
                 displayEmpty
             >
-                <MenuItem value={null}>None</MenuItem>
+                <MenuItem value="">None</MenuItem>
                 {wines.map((wine) => <MenuItem value={wine} key={wine.id}>{wine.name}</MenuItem>)}
             </Select>
         </Toolbar>
@@ -26,7 +26,8 @@ const Header = ({ selectedWine, wines, selectWine }) => (
 );
 
 Header.defaultProps = {
-    selectedWine: null,
+    // defaulting to empty string feels wrong here, but Material UI doesn't like undefined or null
+    selectedWine: '',
     selectWine: null,
     wines: [],
 };

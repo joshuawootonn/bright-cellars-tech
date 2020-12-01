@@ -1,3 +1,23 @@
-.container {
-    background-color: #bada55;
+.empty {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    min-height: calc(100vh - 4rem);
+    width: 100%;
+}
+
+.grid {
+    max-width: 100%;
+    padding: 1rem;
+}
+
+.paper {
+    padding: 1rem;
+    display: flex;
+    flex-direction: column;
+
+    img {
+        max-height: 22rem;
+        align-self: center;
+    }
 }
