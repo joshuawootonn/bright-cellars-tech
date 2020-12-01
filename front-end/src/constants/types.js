@@ -14,3 +14,8 @@ export const WINE_DETAIL = PropTypes.shape({
     brand_id: PropTypes.number,
     varietal_id: PropTypes.number,
 });
+
+export const WINE_TAGS = PropTypes.arrayOf(PropTypes.shape({
+    name: PropTypes.string,
+    id: PropTypes.number,
+}));

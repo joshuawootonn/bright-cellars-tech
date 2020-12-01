@@ -4,15 +4,15 @@ import Paper from '@material-ui/core/Paper';
 import Typography from '@material-ui/core/Typography';
 import styles from './App.scss';
 import productImage from '../assets/wines/folk-and-fable.png';
-import { WINE_DETAIL } from '../constants/types';
+import { WINE_DETAIL, WINE_TAGS } from '../constants/types';
 
-const Detail = ({ details }) => (
+const Detail = ({ details, tags }) => (
     <Grid
         container
         direction="row"
         spacing={3}
     >
-        <Grid item xs={4}>
+        <Grid item xs={12} md={4}>
             <Paper className={styles.paper}>
                 <img
                     alt="product"
@@ -28,9 +28,15 @@ const Detail = ({ details }) => (
                     {details.varietal_name}
                 </Typography>
 
-                <Typography variant="body2" gutterBottom>
+                <Typography variant="body1" gutterBottom>
                     {details.description}
                 </Typography>
+                <Typography variant="body2" gutterBottom>
+                    Tags:
+                    {' '}
+                    {tags.map((tag) => tag.name).join(', ')}
+                </Typography>
+
             </Paper>
         </Grid>
 
@@ -39,6 +45,7 @@ const Detail = ({ details }) => (
 
 Detail.propTypes = {
     details: WINE_DETAIL.isRequired,
+    tags: WINE_TAGS.isRequired,
 };
 
 export default Detail;
