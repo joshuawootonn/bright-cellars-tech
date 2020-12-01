@@ -9,7 +9,8 @@ import TextField from '@material-ui/core/TextField';
 import styles from './styles.scss';
 
 const RatingForm = ({ postRating }) => {
-    const [formState, setFormState] = useState({ rating: 4, review: '' });
+    const initialFormState = { rating: 4, review: '' };
+    const [formState, setFormState] = useState(initialFormState);
     const [isValid, setIsValid] = useState(false);
 
     const validate = (nextState) => setIsValid(nextState.rating <= 5
@@ -32,6 +33,8 @@ const RatingForm = ({ postRating }) => {
 
         if (isValid) {
             postRating(formState);
+            setFormState(initialFormState);
+            validate(initialFormState);
         }
     };
 
