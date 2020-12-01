@@ -1,7 +1,6 @@
 import { useEffect, useState } from 'react';
 import { GET_WINE_TAGS } from '../constants/endpoints';
 
-
 const deriveViewModelFromResponse = (response) => response.taste_tags;
 
 const useWineTags = (wine) => {

@@ -42,7 +42,6 @@ const RatingForm = ({ postRating }) => {
                     <Typography variant="h5" gutterBottom>
                         New Review
                     </Typography>
-
                     <Typography gutterBottom>
                         Rating
                     </Typography>

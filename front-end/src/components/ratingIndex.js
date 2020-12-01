@@ -33,6 +33,8 @@ const RatingIndex = ({ ratings, average, isLoading }) => (
                             // But I think it's a great opportunity to have a conversation about this lint rule to see if it is helping :)
                             <React.Fragment key={performance.now()}>
                                 <ListItemText
+                                    // I like using styles here, it makes sure that MUI doesn't override our className
+                                    // and specific styles like these are not very reusable across files.
                                     style={{
                                         marginTop: '0.5rem',
                                         marginBottom: '0.5rem',
