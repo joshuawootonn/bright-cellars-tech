@@ -11,6 +11,9 @@ const theme = createMuiTheme({
         primary: {
             main: colors.EDEN,
         },
+        secondary: {
+            main: colors.GAMBOGE,
+        },
     },
     breakpoints: {
         values: {

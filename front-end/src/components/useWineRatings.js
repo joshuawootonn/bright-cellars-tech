@@ -3,7 +3,7 @@ import { GET_WINE_RATINGS, POST_WINE_RATING } from '../constants/endpoints';
 
 const deriveViewModelFromResponse = ({ ratings }) => ({
     ratings,
-    avg: Math.floor(100 * (ratings.reduce((acc, curr) => acc + curr.rating, 0) / ratings.length)) / 100,
+    average: Math.floor(100 * (ratings.reduce((acc, curr) => acc + curr.rating, 0) / ratings.length)) / 100,
 });
 
 const useWineRatings = (wine) => {
@@ -43,7 +43,7 @@ const useWineRatings = (wine) => {
     return {
         state,
         wineRatings: ratings && ratings.ratings,
-        avgWineRating: ratings && ratings.avg,
+        averageWineRating: ratings && ratings.average,
         postRating,
     };
 };

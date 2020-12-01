@@ -10,7 +10,6 @@ import useWineTags from './useWineTags';
 import RatingIndex from './ratingIndex';
 import useWineRatings from './useWineRatings';
 import RatingForm from './ratingForm';
-import Progress from './progress';
 
 
 const combineState = (...states) => states.reduce((acc, curr) => {
@@ -26,7 +25,7 @@ const App = () => {
     const { state: detailState, wineDetails } = useWineDetails(selectedWine);
     const { state: tagState, wineTags } = useWineTags(selectedWine);
     const {
-        state: ratingState, wineRatings, avgWineRating, postRating,
+        state: ratingState, wineRatings, averageWineRating, postRating,
     } = useWineRatings(selectedWine);
 
     useEffect(() => {
@@ -54,27 +53,13 @@ const App = () => {
                         direction="row"
                         spacing={3}
                     >
-                        {wineDetailState === 'success'
-                            ? <Detail details={wineDetails} tags={wineTags} />
-                            : (
-                                <Grid item xs={12} md={4}>
-                                    <Progress />
-                                </Grid>
-                            )}
-
-                        {
-                            ratingState === 'success' ? (
-                                <>
-                                    <RatingIndex avg={avgWineRating} ratings={wineRatings} />
-                                    <RatingForm postRating={postRating} />
-                                </>
-                            )
-                                : (
-                                    <Grid item xs={12} md={8}>
-                                        <Progress />
-                                    </Grid>
-                                )
-                        }
+                        <Detail isLoading={wineDetailState !== 'success'} details={wineDetails} tags={wineTags} />
+                        <RatingIndex
+                            isLoading={ratingState !== 'success'}
+                            average={averageWineRating}
+                            ratings={wineRatings}
+                        />
+                        <RatingForm postRating={postRating} />
                     </Grid>
                 </div>
             )}
