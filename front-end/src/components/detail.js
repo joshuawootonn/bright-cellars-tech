@@ -1,8 +1,8 @@
 import React from 'react';
-import Grid from '@material-ui/core/Grid';
 import Paper from '@material-ui/core/Paper';
 import Typography from '@material-ui/core/Typography';
-import styles from './App.scss';
+import Grid from '@material-ui/core/Grid';
+import styles from './styles.scss';
 import productImage from '../assets/wines/folk-and-fable.png';
 import { WINE_DETAIL, WINE_TAGS } from '../constants/types';
 
@@ -10,6 +10,7 @@ const Detail = ({ details, tags }) => (
     <Grid item xs={12} md={4}>
         <Paper className={styles.paper}>
             <img
+                className={styles.img}
                 alt="product"
                 src={productImage}
             />

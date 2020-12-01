@@ -16,17 +16,28 @@
 // Here I am consciously deciding to duplicate the breakpoint to keep my styles in scss
 $md-breakpoint: 48rem;
 
+.center {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
 .paper {
     padding: 1rem;
     display: flex;
     flex-direction: column;
+    align-items: flex-start;
+}
 
-    img {
-        max-height: 12rem;
-        align-self: center;
+.img {
+    max-height: 12rem;
+    align-self: center;
 
-        @media (min-height: $md-breakpoint) {
-            max-height: 22rem;
-        }
+    @media (min-height: $md-breakpoint) {
+        max-height: 22rem;
     }
+}
+
+.formRoot {
+    width: 100%;
 }

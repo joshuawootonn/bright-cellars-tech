@@ -6,7 +6,7 @@ import React from 'react';
 import Divider from '@material-ui/core/Divider';
 import ListItemText from '@material-ui/core/ListItemText';
 import List from '@material-ui/core/List';
-import styles from './App.scss';
+import styles from './styles.scss';
 import { WINE_RATINGS } from '../constants/types';
 
 const RatingIndex = ({ ratings, avg }) => (

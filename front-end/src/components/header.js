@@ -4,12 +4,12 @@ import MenuItem from '@material-ui/core/MenuItem';
 import Select from '@material-ui/core/Select';
 import Toolbar from '@material-ui/core/Toolbar';
 import PropTypes from 'prop-types';
-import styles from './header.scss';
+import styles from './styles.scss';
 import { WINE } from '../constants/types';
 
 const Header = ({ selectedWine, wines, selectWine }) => (
     <AppBar position="static">
-        <Toolbar className={styles.toolbar}>
+        <Toolbar className={styles.center}>
             <Select
                 labelId="demo-simple-select-label"
                 id="demo-simple-select"
