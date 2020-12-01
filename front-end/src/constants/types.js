@@ -19,3 +19,9 @@ export const WINE_TAGS = PropTypes.arrayOf(PropTypes.shape({
     name: PropTypes.string,
     id: PropTypes.number,
 }));
+
+export const WINE_RATINGS = PropTypes.arrayOf(PropTypes.shape({
+    rating: PropTypes.number,
+    review: PropTypes.string,
+    id: PropTypes.number,
+}));
