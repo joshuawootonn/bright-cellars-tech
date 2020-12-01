@@ -11,6 +11,11 @@ const theme = createMuiTheme({
             main: colors.EDEN,
         },
     },
+    breakpoints: {
+        values: {
+            md: 768,
+        },
+    },
     overrides: {
         MuiSelect: {
             select: {
